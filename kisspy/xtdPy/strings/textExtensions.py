@@ -1,6 +1,7 @@
 import os
 import re
 
+
 def randomString(size=5) -> str:
     """
     returns a random string of length size
@@ -12,6 +13,7 @@ def randomString(size=5) -> str:
         str: random string
     """
     return str(os.urandom(size).hex())[:size]
+
 
 def replaceChars(source: str, remove: str, replaceWith: str = ""):
     """
