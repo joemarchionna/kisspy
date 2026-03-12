@@ -1,0 +1,21 @@
+
+{
+    "name": "kisspy",
+    "version": "0.2.0",
+    "author": "Joe Marchionna",
+    "author_email": "joemarchionna@gmail.com",
+    "description": "some description",
+    "requirements": "requirements/prod.txt",
+    "url": "https://github.com/joemarchionna/kisspy",
+    "packageData":
+    {
+        "kisspy": [
+            "*.json", "reference/*.cfg"
+        ]
+    },
+    "classifiers": [
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+        "Intended Audience :: Developers"
+    ]
+}
