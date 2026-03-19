@@ -49,7 +49,7 @@ def assertOne(records: list, onZeroRcds=None, onMultiRcds=thrwMultiRcdExc) -> di
     """
     if the list has only one record, returns the only record\n
     if the list is empty or None, returns the result of the\n
-     onZeroRcds callable if provided else an empty list\n
+     onZeroRcds callable if provided else None\n
     if the length of the list is greater than one, returns the\n
      result of the onMultiRcds callable if provided else the original\n
      list; default action is raise an TooManyRecordsException\n
@@ -58,7 +58,7 @@ def assertOne(records: list, onZeroRcds=None, onMultiRcds=thrwMultiRcdExc) -> di
     if not records:
         if onZeroRcds:
             return onZeroRcds(records)
-        return {}
+        return None
     if len(records) > 1:
         if onMultiRcds:
             return onMultiRcds(records)

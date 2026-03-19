@@ -1,5 +1,6 @@
 class KisspyException(Exception):
-    pass
+    def toStrWithTyp(self) -> str:
+        return "{}: {}".format(type(self).__name__, self)
 
 
 class PidFilePresentException(KisspyException):
@@ -15,3 +16,14 @@ class TooManyRecordsException(KisspyException):
             super().__init__(msg, *args)
         else:
             super().__init__(*args)
+
+
+class ZeroRecordsException(KisspyException):
+    MSG_FORMAT = "Zero (0) {} Returned, > 0 Were Expected"
+
+    def __init__(self, *args, recordType: str = "Records"):
+        if args:
+            super().__init__(*args)
+        else:
+            msg = ZeroRecordsException.MSG_FORMAT.format(recordType)
+            super().__init__(msg, *args)

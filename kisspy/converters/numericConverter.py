@@ -1,6 +1,8 @@
 def raiseValExc(*args, **kwargs):
     """raises a ValueError with the first argument displayed in single quotes as part of the error message"""
-    raise ValueError("The Value '{}' Could Not Be Converted To A Numeric Value".format(args[0]))
+    msg = "The Value '{}' Could Not Be Converted To A Numeric Value".format(args[0])
+    args[1].add_note(msg)
+    raise args[1]
 
 
 def returnNone(*args, **kwargs) -> None:
@@ -27,4 +29,4 @@ def toNumeric(val, onFail=returnNone) -> float | int | None:
             return int(val)
         return val
     except ValueError as verr:
-        return onFail(val)
+        return onFail(val, verr)
