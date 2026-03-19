@@ -1,16 +1,16 @@
 
 {
-    "name": "kisspy",
-    "version": "1.0.0",
+    "name": "kisspy-python",
+    "version": "1.0.1",
     "author": "Joe Marchionna",
     "author_email": "joemarchionna@gmail.com",
-    "description": "some description",
+    "description": "Simple Python Scripting Helpers",
     "requirements": "requirements/prod.txt",
     "url": "https://github.com/joemarchionna/kisspy",
     "packageData":
     {
         "kisspy": [
-            "*.json", "reference/*.cfg"
+            "*.json"
         ]
     },
     "classifiers": [
