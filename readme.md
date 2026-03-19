@@ -149,7 +149,7 @@ Nested Dicts:
 Installation:
 
 ````bash
-    pip install kisspy
+    pip install kisspy-python
 ````
 
 ### Cloning For Development
