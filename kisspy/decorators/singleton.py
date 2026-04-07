@@ -1,12 +1,16 @@
 def singleton(_class):
     """
-    class decorator to create a single instance of a class;\n
-    usage:\n
+    class decorator to create a single instance of a class
 
-    @singleton\n
-    class MyClass(<baseClass>):\n
-        pass
+    Args:
+        _class (_type_): the class to decorate
 
+    Example:
+        ````python
+        @singleton
+        class MyClass(<baseClass>):
+            pass
+        ````
     """
     _instances = {}
 

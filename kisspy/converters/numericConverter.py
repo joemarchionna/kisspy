@@ -12,15 +12,21 @@ def returnNone(*args, **kwargs) -> None:
 
 def returnTxt(*args, **kwargs) -> None:
     """returns the first argument, does nothing else"""
-    return args[0]
+    if args:
+        return args[0]
+    return ""
 
 
 def toNumeric(val, onFail=returnNone) -> float | int | None:
     """
-    returns a float or int, by converting the provided val\n
-    \t to a float and if possible, an int\n
-    on error, it calls onFail providing val as the first parameter\n
-    \t by default, returns None
+    returns a float or int, by converting the provided val to a float and if possible, an int
+
+    Args:
+        val (_type_): the value to attempt to convert
+        onFail (callable, optional): on error or failure, this is called with the value as the first arg / parameter and the exception as the second parameter. Defaults to returnNone
+
+    Returns:
+        float | int | None: resulting value
     """
     try:
         if isinstance(val, str):
@@ -29,4 +35,6 @@ def toNumeric(val, onFail=returnNone) -> float | int | None:
             return int(val)
         return val
     except ValueError as verr:
+        if not onFail:
+            return None
         return onFail(val, verr)

@@ -13,7 +13,15 @@ def _divmod_excel(n):
 
 
 def toExcelCol(columnNum: int) -> str:
-    """converts a 1-based column number to Excel column name, ie: 27 -> AA"""
+    """
+    converts a 1-based column number to Excel-ish column name, ie: 1 -> A; 27 -> AA
+
+    Args:
+        columnNum (int): the column number
+
+    Returns:
+        str: the column name
+    """
     chars = []
     while columnNum > 0:
         columnNum, d = _divmod_excel(columnNum)
@@ -22,5 +30,13 @@ def toExcelCol(columnNum: int) -> str:
 
 
 def fromExcelCol(columnName: str) -> int:
-    """converts an Excel column name to a 1-based integer, ie: AA -> 27"""
+    """
+    converts an Excel column name to a 1-based integer, ie: A -> 1; AA -> 27
+
+    Args:
+        columnName (str): the column name
+
+    Returns:
+        int: the column number
+    """
     return reduce(lambda r, x: r * 26 + x + 1, map(string.ascii_uppercase.index, columnName), 0)

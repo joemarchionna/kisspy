@@ -1,11 +1,12 @@
 class Singleton(type):
     """
-    meta-class to create a single instance of a class;\n
-    usage:\n
+    meta-class to create a single instance of a class
 
-    class MyClass(<baseClass>, metaclass=Singleton):\n
-        pass
-
+    Example:
+        ````python
+        class MyClass(<baseClass>, metaclass=Singleton):\n
+            pass
+        ````
     """
 
     _instances = {}
