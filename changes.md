@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 none
 
+## [1.3.0] - 2026 06 03
+### Added
+- createMissingDir parameter to pidFile decorator
+
 ## [1.2.0] - 2026 05 07
 ### Added
 - methodParameter decorators
